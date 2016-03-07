@@ -26,22 +26,20 @@ wso2::clustering :
     wka :
        members :
          -
-###### TEST MODIFICATION #####
            hostname : gateway1.am.wso2.com
            port : 4000
          -
            hostname : publisher1.am.wso2.com
-           port : 4200
+           port : 4000
          -
            hostname : publisher2.am.wso2.com
-           port : 4250
+           port : 4000
          -
            hostname : store1.am.wso2.com
-           port : 4300
+           port : 4000
          -
            hostname : store2.am.wso2.com
-           port : 4350
-###### END MODIFICATION #####
+           port : 4000
 
 
 # Registry mounting
@@ -67,20 +65,3 @@ wso2::usermgt :
     admin_username : admin
     admin_password : admin
     type : jdbc
-
-
-########## Configs needed for local testing ############
-# Deployment synchronization configuration
-wso2::dep_sync :
-    enabled : false
-    auto_checkout : true
-    auto_commit : true
-    repository_type : svn
-    svn :
-       url : https://svn.wso2.com/wso2/interns/2013/abimaran/clustering/-1234/
-       user : abimaran@wso2.com
-       password : password
-       append_tenant_id: true
-
-wso2::ports:
-    offset : 1
