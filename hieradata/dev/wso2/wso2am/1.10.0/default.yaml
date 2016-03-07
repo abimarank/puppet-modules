@@ -33,15 +33,11 @@ wso2::apim_gateway :
 
 wso2::apim_store :
     host : store.am.wso2.com
-###### TEST MODIFICATION #####
-    port : 9446
-###### END MODIFICATION #####
+    port : 9443
 
 wso2::apim_publisher :
     host : publisher.am.wso2.com
-###### TEST MODIFICATION #####
-    port : 9445
-###### END MODIFICATION #####
+    port : 9443
 
 # Clustering configuration
 wso2::clustering :
@@ -174,13 +170,13 @@ wso2::template_list :
   - repository/deployment/server/jaggeryapps/store/site/conf/site.json
   - repository/deployment/server/synapse-configs/default/api/_TokenAPI_.xml
   - repository/resources/api_templates/velocity_template.xml
-  - repository/deployment/server/webapps/api#am#publisher#v0.9.war
 
 wso2::file_list :
   - repository/components/lib/oauth-app-registration-1.0.0.jar
   - repository/components/lib/jwt-custom-claims-1.0.0.jar
   - repository/components/lib/gateway.client-1.0.0.jar
   - repository/deployment/server/webapps/api-import-export-v1.0.1.war
+  - repository/deployment/server/webapps/api#am#publisher#v0.9.war
 
 wso2::third_party_keymanager :
   enabled : true
@@ -196,17 +192,6 @@ wso2::map_existing_auth_apps  :
 wso2::jwt_token_generator :
   enabled : true
   jwt_token_generator_impl :  org.wso2.carbon.apimgt.sciquest.jwt.claims.CustomJWTGenerator
-
-###### TEST MODIFICATION #####
-########## Configs needed for local testing ############
-wso2::file_list :
-  - repository/components/lib/mysql-connector-java-5.1.38-bin.jar
-  - repository/components/lib/trilead-ssh2-1.0.0-build215.jar
-  - repository/components/lib/svnkit-all-1.8.7.wso2v1.jar
-
-wso2::pack_extracted_dir : "%{::product_name}-%{::product_version}"
-
-wso2::service_name: wso2am
 
 wso2::add_concurrent_throttle_handler :
   enabled : true
