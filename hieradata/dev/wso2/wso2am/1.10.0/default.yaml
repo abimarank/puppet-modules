@@ -180,6 +180,7 @@ wso2::file_list :
   - repository/components/lib/oauth-app-registration-1.0.0.jar
   - repository/components/lib/jwt-custom-claims-1.0.0.jar
   - repository/components/lib/gateway.client-1.0.0.jar
+  - repository/deployment/server/webapps/api-import-export-v1.0.1.war
 
 wso2::third_party_keymanager :
   enabled : true
